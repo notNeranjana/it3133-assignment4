@@ -6,9 +6,28 @@ import AnimalsGrid from "./components/AnimalsGrid";
 import { animals } from "./data/AnimalsDb";
 
 function App() {
+  const selectRandomAnimal = () => {
+    const randomIndex = Math.floor(Math.random() * animals.length);
+
+    return animals[randomIndex].name;
+  };
+
   const [result, setResult] = useState("");
-  const [randomAnimal, setRandomAnimal] = useState("");
+  const [randomAnimal, setRandomAnimal] = useState(selectRandomAnimal());
   const [selectedAnimal, setSelectedAnimal] = useState("");
+
+  const checkResult = (selectedAnimal) => {
+    if (selectedAnimal === randomAnimal) {
+      setResult("Win!");
+
+      setTimeout(() => {
+        setResult("");
+        setRandomAnimal(selectRandomAnimal());
+      }, 5000);
+    } else {
+      setResult("Lose!");
+    }
+  };
 
   return (
     <div className="container">
@@ -27,6 +46,7 @@ function App() {
 
         <AnimalsGrid
           animals={animals}
+          checkResult={checkResult}
           selectedAnimal={selectedAnimal}
           setSelectedAnimal={setSelectedAnimal}
         />

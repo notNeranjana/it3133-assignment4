@@ -1,4 +1,4 @@
-body {
+.container {
   text-align: center;
   max-height: 100vh;
   padding: 0.5rem;
@@ -44,7 +44,7 @@ header {
   font-weight: bold;
   color: #ff6b00;
   text-align: center;
-  padding: 10px;
+  text-transform: capitalize;
 }
 
 .animal-grid {
