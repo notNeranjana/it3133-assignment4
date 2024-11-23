@@ -2,9 +2,9 @@ import React from "react";
 
 const Result = ({ result }) => {
   return (
-    <div className="result">
+    <div className="border-orange">
       <h3>Result</h3>
-      <p>{result}</p>
+      <p className="result">{result}</p>
     </div>
   );
 };
