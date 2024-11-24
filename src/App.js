@@ -35,7 +35,7 @@ function App() {
         <h1>Animal Matching Game</h1>
       </header>
 
-      <div className="main">
+      <div className="board">
         <Result result={result} />
 
         <Animal

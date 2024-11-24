@@ -13,16 +13,16 @@ const AnimalsGrid = ({
         {animals.map((animal, index) => (
           <div
             key={index}
-            className={`animal ${
-              selectedAnimal === animal.name ? "selected" : ""
-            }`}
+            className="animal-card"
             onClick={() => {
               setSelectedAnimal(animal.name);
               checkResult(animal.name);
             }}
           >
             <img
-              className="animal-image"
+              className={`animal-image ${
+                selectedAnimal === animal.name ? "selected" : ""
+              }`}
               src={`./fig/${animal.img}`}
               alt={animal.name}
             />
